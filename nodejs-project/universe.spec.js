@@ -9,6 +9,9 @@ Array.prototype.reduce = function () {
 };
 
 it('should sum stars', function () {
+  
+  console.log('test');
+  
   try {
     assert.equal(6, universe.countAllStars([1, 2, 3]));
     assert.equal(16, universe.countAllStars([10, 3, 2, 1]));
