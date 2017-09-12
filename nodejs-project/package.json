@@ -4,7 +4,15 @@
   "description": "",
   "author": "FERNANDEZ Quentin",
   "license": "ISC",
+  "scripts": {
+    "test:blockScope": "mocha --compilers js:babel-core/register blockScope.test.js"
+  },
   "dependencies": {
-    "mocha": "^3.4.2"
+    "babel-cli": "^6.26.0",
+    "mocha": "^3.5.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
   }
 }
