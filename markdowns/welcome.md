@@ -1,4 +1,4 @@
-I've been lucky enough to be using JavaScript with a transpiler for a few years now and as web developers it really has opened a whole new world for us.  Instead of waiting for browsers to support the latest features we are able to write the JavaScript of tomorrow and have it converted into a format that today's browsers will understand.
+I've been lucky enough to be using JavaScript with a transpiler for a few years now and for us web developers, it really has opened a whole new world for us.  Instead of waiting for browsers to support the latest features we are able to write the JavaScript of tomorrow and have it converted into a format that today's browsers will understand.
 
 Here are 5 features that I really think can make a big difference to the readability and maintainability of a code base.
 
@@ -7,6 +7,8 @@ It might not seem so at first but being able to write
 `let id = 1;` or `const customerName = 'Barry';` can make a huge difference to the readability of a code base.  Whist the 'const' keyword does not prevent mutation of object properties, the original variable cannot be redeclared or assigned in that block.  I find myself using it a-lot to simply let myself or another developer know that the variable will not be changed again in that scope (at least intentionally!).  Lets face it when code gets complex one less variable that you have to track in your head is always nice!
 
 When looking at source code of libraries (lets face it not every cool npm package has great documentation so sometimes its the only way of working our what something does or is doing to you!) the fact that `let` and `const` are being used greatly improves readability of the code. Code written with the use of block scoped variables means that we no longer need to declare our variables at the top of every closure (ok not everyone did this but it was fairly common) to explicitly take into account variable hoisting and function level scope.  Code written in this way was theoretically safe but often required one to become a human compiler in order to understand the code you were reading.
+
+@[Luke, how many stars are there in these galaxies?]({ "stubs": ["universe.js"], "command": "node_modules/mocha/bin/mocha universe.spec.js --reporter list" })
 
 ## 2. Template Strings
 This is one of the most common sense additions to JavaScript.  When querying a backend api it was always annoying having to do something like:
