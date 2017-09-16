@@ -8,7 +8,7 @@ It might not seem so at first but being able to write
 
 When looking at source code of libraries (lets face it not every cool npm package has great documentation so sometimes its the only way of working our what something does or is doing to you!) the fact that `let` and `const` are being used greatly improves readability of the code. Code written with the use of block scoped variables means that we no longer need to declare our variables at the top of every closure (ok not everyone did this but it was fairly common) to explicitly take into account variable hoisting and function level scope.  Code written in this way was theoretically safe but often required one to become a human compiler in order to understand the code you were reading.
 
-@[Luke, how many stars are there in these galaxies?]({ "stubs": ["blockScope.js"], "command": "npm run test:blockScope" })
+@[Luke, how many stars are there in these galaxies?]({ "stubs": ["blockScope.js","blockScope.test.js"], "command": "npm run test:blockScope" })
 
 ## 2. Template Strings
 This is one of the most common sense additions to JavaScript.  When querying a backend api it was always annoying having to do something like:
