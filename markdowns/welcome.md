@@ -30,7 +30,7 @@ As an added bonus frameworks such as Angular(2+) allow you to declare templates 
 ```
 Obviously for full scale application you may wish to externalize these files depending on your tastes but this really can be great for prototyping or trying things out.
 
-@[Try writing a function that uses this to build a string that passes the test.]({ "stubs": ["blockScope.js","blockScope.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register blockScope.test.js" })
+@[Try writing a function that uses this to build a string that passes the test.]({ "stubs": ["destructure.js","destructure.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register destructure.test.js" })
 
 ## 3. Destructuring
 
