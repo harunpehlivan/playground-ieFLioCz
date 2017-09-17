@@ -78,11 +78,9 @@ Whilst we may not want to do this in every scenario we may there are many times 
 @[Try using the spread operator to add an element to the start of the array.]({ "stubs": ["spreadExample.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register spreadExample.test.js" })
 
 The spread operator can also be used with objects to extend an original object whilst creating a new reference:
-```javascript
-const baseEmployee = {company: 'acme', active: true};
 
-const newEmployee = {...baseEmployee,...{ department:'deliveries',name:'Andrew'}};
-```
+@[The spread operator can also be used with objects to extend an original object whilst creating a new reference:]({ "stubs": ["objectSpread.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register objectSpread.js" })
+
 As we haven't mutated our original baseEmployee variable we can us this as a template for our data.  The spread operator with objects is also a great way to update / combine data.
 ## 5. Iterables and generators
 From ES6 onwards any object that possess the property symbol.iterator is able to be traversed with the new for of loop.
