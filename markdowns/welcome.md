@@ -75,6 +75,8 @@ Now we can do:
 ```
 Whilst we may not want to do this in every scenario we may there are many times that this approach is desirable.  Firstly the code is pretty terse which is always a good thing, secondly using the spread operator to assign the contents of the original array to a new array with the value to be added placed explicitly on the end of the new array gives us a new reference.  Many frameworks use this approach (we are effectively updating our data in an immutable fashion) to optimize performance by only executing code that is dependant on data when a new reference is detected, or to produce more deterministic results.  Many templating engines and state management libraries use this approach.  Whilst we are creating a new array here the performance is still pretty fast as the references of the elements of the original array are still the same.  We are not doing a deep clone of the original array and all of its data.
 
+@[Try using the spread operator to add an element to the start of the array.]({ "stubs": ["spreadExample.js","spreadExample.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register spreadExample.test.js" })
+
 The spread operator can also be used with objects to extend an original object whilst creating a new reference:
 ```javascript
 const baseEmployee = {company: 'acme', active: true};
