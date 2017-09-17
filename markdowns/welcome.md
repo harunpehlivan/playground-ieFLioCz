@@ -30,8 +30,6 @@ As an added bonus frameworks such as Angular(2+) allow you to declare templates 
 ```
 Obviously for full scale application you may wish to externalize these files depending on your tastes but this really can be great for prototyping or trying things out.
 
-@[Try writing a function that uses this to build a string that passes the test.]({ "stubs": ["destructure.js","destructure.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register destructure.test.js" })
-
 ## 3. Destructuring
 
 The ability to destructure properties of an object or array helps us write more expressive code with less errors.  For example:
@@ -56,6 +54,8 @@ Can later be used as:
 const { name, age, gender } = person;
 ```
 This can prove really useful writing Jsx markup in React where you might want to reference the property directly in your markup rather than use dot notation or if you want to be really specific about what properties of an object your code will use in the following lines of code. (obviously this is not React specific).
+
+@[Try writing a function that uses destructuring and template strings to build a string that passes the test.]({ "stubs": ["destructure.js","destructure.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register destructure.test.js" })
 
 ## 4. Spread operator
 The spread operator opens up a whole new world when it comes to dealing with objects or arrays and can actually change the way we deal with our data.
