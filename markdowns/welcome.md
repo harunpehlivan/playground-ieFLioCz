@@ -55,6 +55,8 @@ const { name, age, gender } = person;
 ```
 This can prove really useful writing Jsx markup in React where you might want to reference the property directly in your markup rather than use dot notation or if you want to be really specific about what properties of an object your code will use in the following lines of code. (obviously this is not React specific).
 
+@[Try writing a function that uses destructuring to build a string that passes the test.]({ "stubs": ["blockScope.js","blockScope.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register blockScope.test.js" })
+
 ## 4. Spread operator
 The spread operator opens up a whole new world when it comes to dealing with objects or arrays and can actually change the way we deal with our data.
 
