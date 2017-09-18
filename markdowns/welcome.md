@@ -104,3 +104,5 @@ NB: I opted not go too in depth on generators and async and await as to do the t
 
 ## Final thoughts
 Javascript really has become a-lot of fun as well as a really exciting space to work in recent years.  The improvements in the language features means that it has gone from a language the used to be rife with oddities and programming compromises in order to achieve the semblance of a well structured, maintainable code base to a language that offers great productivity, reach and accessibility thats also pretty fun to work with.  Obviously these are just my favourite /  most used features and there are a ton more both in the language and on the way.  All in all its a pretty exciting times of development and innovation ahead for everyone working in this space.
+
+For more tutorials on web development checkout my [other tutorials here](https://tech.io/users/2139342) or for my latest JavaScript content check me out on [justintimecoder.com](https://justintimecoder.com/tag/javascript/).
