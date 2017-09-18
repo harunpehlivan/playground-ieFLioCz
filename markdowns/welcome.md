@@ -2,6 +2,8 @@ I've been lucky enough to be using JavaScript with a transpiler for a few years 
 
 Here are 5 features that I really think can make a big difference to the readability and maintainability of a code base.
 
+NB: This is an interactive version of the [original article from justintimecoder.com](https://justintimecoder.com/5-features-of-es-6-7-8-that-supercharge-your-javascript/).
+
 ## 1. Block scope variables
 It might not seem so at first but being able to write
 `let id = 1;` or `const customerName = 'Barry';` can make a huge difference to the readability of a code base.  Whist the 'const' keyword does not prevent mutation of object properties, the original variable cannot be redeclared or assigned in that block.  I find myself using it a-lot to simply let myself or another developer know that the variable will not be changed again in that scope (at least intentionally!).  Lets face it when code gets complex one less variable that you have to track in your head is always nice!
@@ -88,36 +90,15 @@ From ES6 onwards any object that possess the property symbol.iterator is able to
 This is because the property symbol.iterator is the implementation of an iterator which provides the logic for enumerating the parent object.  Generator functions allow us to specify custom logic for yielding values which really opens up interesting possibilities for transforming and processing data.
 
 Another interesting application of generators is how they can be used to enable asynchronous processing that looks similar to synchronous code.  By yielding a Promise and calling the the next function of the generator (or throw on error) when the Promise resolves we have the foundation of async and await in Javascript.
-```javascript
-    function* generatorFunc() {
 
-       let result = yield getDataAsync();
-       processResult(result);      
-    }
+@[Learn by doing!  Try running and playing around with the following code to see generators in action]({ "stubs": ["generator.js", "generator.statemachine.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register generator.test.js" })
 
-    function useGeneratorAsStateMachine(generatorFunc) {
-        let generatorObj = generatorFunc();
-        moveToNext();
-
-        function moveToNext(asyncResult = undefined) {
-            let item = generatorObj.next(asyncResult);
-            if (!item.done) {
-                // A promise will be our value 
-                item.value
-                .then(result => moveToNext(result))
-                .catch(error => {
-                    generatorObj.throw(error);
-                });
-            }
-        }
-    }
-```
 Though the code above is simplified for the purposes of a blog post the generatorFunc generator is written in a very similar manner to a function that would use async and await in JavaScript e.g:
 ```javascript
     async function doSomethingAsync() {
 
        let result = await getDataAsync();
-       processResult(result);      
+       console.log(result);      
     }
 ```
 Whilst not every scenario for async programming in JavaScript suit this (I quite like using RxJs with Angular to declare the handling of asynchronous events with constant values using set and time based operators and the function chaining works well here) it's great to have the option to avoid conflating the input and output of our code, i.e stuff reads from top to bottom in the sequence in which it executes, I'm sure anyone that has experience "callback hell" or "Christmas tree" syntax will appreciate this.  When this does work well the code is extremely easy to read and understand.
@@ -126,33 +107,3 @@ NB: I opted not go too in depth on generators and async and await as to do the t
 
 ## Final thoughts
 Javascript really has become a-lot of fun as well as a really exciting space to work in recent years.  The improvements in the language features means that it has gone from a language the used to be rife with oddities and programming compromises in order to achieve the semblance of a well structured, maintainable code base to a language that offers great productivity, reach and accessibility thats also pretty fun to work with.  Obviously these are just my favourite /  most used features and there are a ton more both in the language and on the way.  All in all its a pretty exciting times of development and innovation ahead for everyone working in this space.
-# Welcome!
-
-This Nodejs template lets you get started quickly with a simple working example using npm. If it is your first contribution then you should have a look at the [Getting Started](https://tech.io/doc/getting-started-create-playground) document.
-
-
-The source code is on [GitHub](https://github.com/TechDotIO/nodejs-template), please feel free to come up with proposals to improve it.
-
-# Hands-on Demo
-
-@[Luke, how many stars are there in these galaxies?]({ "stubs": ["universe.js"], "command": "node_modules/mocha/bin/mocha universe.spec.js --reporter list" })
-
-Check out the markdown file [`welcome.md`](https://github.com/TechDotIO/nodejs-template/blob/master/markdowns/welcome.md) to see how this exercise is injected into the template.
-
-# Template Resources
-
-[`markdowns/welcome.md`](https://github.com/TechDotIO/nodejs-template/blob/master/markdowns/welcome.md)
-What you are reading here is generated by this file. Tech.io uses the [Markdown syntax](https://tech.io/doc/reference-markdowns) to render text, media and to inject programming exercises.
-
-
-[`nodejs-project`](https://github.com/TechDotIO/nodejs-template/tree/master/nodejs-project)
-A simple Nodejs project dedicated to run the programming exercise above. A project relies on a Docker image to run. You can find images on the [Docker Hub](https://hub.docker.com/explore/) or you can even [build your own](https://tech.io/doc/reference-runner).
-
-
-[`techio.yml`](https://github.com/TechDotIO/nodejs-template/blob/master/techio.yml)
-This *mandatory* file describes both the table of content and the programming project(s). The file path should not be changed.
-
-
-# Visual and Interactive Content
-
-Tech.io provides all the tools to embed visual and interactive content like a Web app or a Unix terminal within your contribution. Please refer to the [documentation](https://tech.io/doc) to learn more about the viewer integrations.
