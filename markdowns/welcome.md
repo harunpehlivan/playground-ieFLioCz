@@ -2,6 +2,8 @@ I've been lucky enough to be using JavaScript with a transpiler for a few years 
 
 Here are 5 features that I really think can make a big difference to the readability and maintainability of a code base.
 
+NB: This is an interactive version of the [original article from justintimecoder.com](https://justintimecoder.com/5-features-of-es-6-7-8-that-supercharge-your-javascript/).
+
 ## 1. Block scope variables
 It might not seem so at first but being able to write
 `let id = 1;` or `const customerName = 'Barry';` can make a huge difference to the readability of a code base.  Whist the 'const' keyword does not prevent mutation of object properties, the original variable cannot be redeclared or assigned in that block.  I find myself using it a-lot to simply let myself or another developer know that the variable will not be changed again in that scope (at least intentionally!).  Lets face it when code gets complex one less variable that you have to track in your head is always nice!
