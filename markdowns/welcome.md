@@ -17,11 +17,8 @@ This is one of the most common sense additions to JavaScript.  When querying a b
 ```javascript
     var url = '/api/customers/' + customerId + '/orders/'+orderId;
 ```
-instead we can do something like:
 
-```javascript
-const url = `/api/customers/${customerId}/orders/${orderId}`; 
-```
+@[instead we can do something like: ]({ "stubs": ["templateString.js"], "command": "node_modules/babel-cli/bin/babel-node.js templateString.js" })
 This massively simplifies one of the most boilerplate coding tasks for web developers and makes strings much easier to read and maintain.
 
 As an added bonus frameworks such as Angular(2+) allow you to declare templates and styles in the same file as their related component.  As template strings respect line breaks, i.e you can write:
