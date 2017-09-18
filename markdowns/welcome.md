@@ -89,31 +89,8 @@ This is because the property symbol.iterator is the implementation of an iterato
 
 Another interesting application of generators is how they can be used to enable asynchronous processing that looks similar to synchronous code.  By yielding a Promise and calling the the next function of the generator (or throw on error) when the Promise resolves we have the foundation of async and await in Javascript.
 
-@[The spread operator can also be used with objects to extend an original object whilst creating a new reference:]({ "stubs": ["generator.js", "generator.statemachine.js", "generator.test.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register generator.test.js" })
-```javascript
-    function* generatorFunc() {
+@[Learn by doing!  Try running and playing around with the following code to see generators in action]({ "stubs": ["generator.js", "generator.statemachine.js"], "command": "node_modules/mocha/bin/mocha --compilers js:babel-core/register generator.test.js" })
 
-       let result = yield getDataAsync();
-       processResult(result);      
-    }
-
-    function useGeneratorAsStateMachine(generatorFunc) {
-        let generatorObj = generatorFunc();
-        moveToNext();
-
-        function moveToNext(asyncResult = undefined) {
-            let item = generatorObj.next(asyncResult);
-            if (!item.done) {
-                // A promise will be our value 
-                item.value
-                .then(result => moveToNext(result))
-                .catch(error => {
-                    generatorObj.throw(error);
-                });
-            }
-        }
-    }
-```
 Though the code above is simplified for the purposes of a blog post the generatorFunc generator is written in a very similar manner to a function that would use async and await in JavaScript e.g:
 ```javascript
     async function doSomethingAsync() {
