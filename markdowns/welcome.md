@@ -79,7 +79,7 @@ Whilst we may not want to do this in every scenario we may there are many times 
 
 The spread operator can also be used with objects to extend an original object whilst creating a new reference:
 
-@[The spread operator can also be used with objects to extend an original object whilst creating a new reference:]({ "stubs": ["objectSpread.js"], "command": "node_modules/babel-cli/bin/babel-node objectSpread.js" })
+@[The spread operator can also be used with objects to extend an original object whilst creating a new reference:]({ "stubs": ["objectSpread.js"], "command": "node_modules/babel-cli/bin/babel-node.js objectSpread.js" })
 
 As we haven't mutated our original baseEmployee variable we can us this as a template for our data.  The spread operator with objects is also a great way to update / combine data.
 ## 5. Iterables and generators
