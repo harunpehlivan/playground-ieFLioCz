@@ -2,7 +2,7 @@ import assert from 'assert';
 import useGeneratorAsStateMachine from './generator.statemachine';
 import generatorFunc from './generator';
 
-it('should return true on completion', ()=> {
+it('generatorFunc logs to console', ()=> {
 
     const result = useGeneratorAsStateMachine(generatorFunc);
 
