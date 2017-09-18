@@ -88,6 +88,8 @@ From ES6 onwards any object that possess the property symbol.iterator is able to
 This is because the property symbol.iterator is the implementation of an iterator which provides the logic for enumerating the parent object.  Generator functions allow us to specify custom logic for yielding values which really opens up interesting possibilities for transforming and processing data.
 
 Another interesting application of generators is how they can be used to enable asynchronous processing that looks similar to synchronous code.  By yielding a Promise and calling the the next function of the generator (or throw on error) when the Promise resolves we have the foundation of async and await in Javascript.
+
+@[The spread operator can also be used with objects to extend an original object whilst creating a new reference:]({ "stubs": ["generator.js", "generator.statemachine.js"], "command": "node_modules/babel-cli/bin/babel-node.js generator.test.js" })
 ```javascript
     function* generatorFunc() {
 
