@@ -1,18 +1,18 @@
 export default function useGeneratorAsStateMachine(generatorFunc) {
     let generatorObj = generatorFunc();
-    moveToNext();
+    moveToNextState();
 
-    function moveToNext(asyncResult = undefined) {
+    function moveToNextState(asyncResult = undefined) {
         let item = generatorObj.next(asyncResult);
+        
         if (!item.done) {
             // A promise will be our value 
             item.value
-                .then(result => moveToNext(result))
+                .then(result => moveToNextState(result))
                 .catch(error => {
                     generatorObj.throw(error);
                 });
         }
-        
-        return true;
-    }
+    }    
+    return true;
 }

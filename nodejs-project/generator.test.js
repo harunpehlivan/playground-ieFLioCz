@@ -4,7 +4,7 @@ import generatorFunc from './generator';
 
 it('should return true on completion', ()=> {
 
-    const result = true;
+    const result = useGeneratorAsStateMachine(generatorFunc);
 
     assert.equal(true, result);
 });
