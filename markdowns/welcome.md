@@ -96,7 +96,7 @@ Though the code above is simplified for the purposes of a blog post the generato
     async function doSomethingAsync() {
 
        let result = await getDataAsync();
-       processResult(result);      
+       console.log(result);      
     }
 ```
 Whilst not every scenario for async programming in JavaScript suit this (I quite like using RxJs with Angular to declare the handling of asynchronous events with constant values using set and time based operators and the function chaining works well here) it's great to have the option to avoid conflating the input and output of our code, i.e stuff reads from top to bottom in the sequence in which it executes, I'm sure anyone that has experience "callback hell" or "Christmas tree" syntax will appreciate this.  When this does work well the code is extremely easy to read and understand.
